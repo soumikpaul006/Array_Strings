@@ -20,14 +20,21 @@ public class Solution
 
         String newTimeINString = "";
 
-        if ((0 <= hrs && hrs < 12) && (period.equalsIgnoreCase("AM"))) {
+        if ((0 <= hrs && hrs < 12) && (period.equalsIgnoreCase("AM"))) 
+        {
             newTimeINString = String.format("%02d", hrs) + ":" + min + ":" + sec;
-        } else if ((0 <= hrs && hrs < 12) && period.equalsIgnoreCase("PM")) {
+        }
+        else if ((0 <= hrs && hrs < 12) && period.equalsIgnoreCase("PM"))
+        {
             newTimeINString = (12 + hrs) + ":" + min + ":" + sec;
 
-        } else if ((hrs == 12) && (period.equalsIgnoreCase("AM"))) {
+        } 
+        else if ((hrs == 12) && (period.equalsIgnoreCase("AM")))
+        {
             newTimeINString = "00" + ":" + min + ":" + sec;
-        } else if ((hrs == 12) && (period.equalsIgnoreCase("PM"))) {
+        }
+        else if ((hrs == 12) && (period.equalsIgnoreCase("PM")))
+        {
             newTimeINString = hrs + ":" + min + ":" + sec;
         }
         return newTimeINString;
