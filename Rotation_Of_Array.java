@@ -34,24 +34,25 @@ public class Main {
     }
     public static int[] rotation_array(int [] a,int ro)
     {
-            int[] b=new int[a.length];
-            int j=a.length-ro;
-            for(int i=0;i<ro;i++)
-            {
-                b[i]=a[j];
-                j=j+1;
-            }
+        int[] b=new int[a.length];
+        //System.out.printf(a.length+"");
+        int j=ro;
+        for(int i=0;i<a.length-ro;i++)
+        {
+            b[i]=a[j];
+            j=j+1;
+        }
 
-            int m=0;
-            for(int i=ro;i<b.length;i++)
-            {
-                b[i]=a[m];
-                m=m+1;
-            }
+        int m=0;
+        for(int k=b.length-ro;k<b.length;k++)
+        {
+            b[k]=a[m];
+            m=m+1;
+        }
 
-            for(int i=0;i<b.length;i++)
-                System.out.print(b[i]+" ");
+        for(int i=0;i<b.length;i++)
+            System.out.print(b[i]+" ");
 
-            return b;
+        return b;
     }
 }
