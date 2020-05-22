@@ -14,29 +14,16 @@ public class Main {
     }
     public static void merge(int[] nums1, int m, int[] nums2, int n)
     {
-
-        int[] a=new int[m+n];
-
-        for(int i=0;i<m;i++)
+        int j=0;
+        for(int i=m;i< nums1.length;i++)
         {
-            a[i]=nums1[i];
+            int temp=nums1[i];
+            nums1[i]=nums2[j];
+            j++;
         }
-
-        int k=0;
-
-        for(int j=m;j<a.length;j++)
-        {
-
-            a[j]=nums2[k];
-            k++;
-        }
-
-        Arrays.sort(a);
-
-        for (int i : a) {
-
-            System.out.print(i + " ");
-        }
+        Arrays.sort(nums1);
+        for(int i:nums1)
+            System.out.print(i+"");
 
     }
 }
