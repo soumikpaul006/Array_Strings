@@ -1,58 +1,33 @@
 package com.soumik;
 import java.util.Scanner;
-public class Main {
-    public  static Scanner sc=new Scanner(System.in);
+public class Main 
+{
     public static void main(String[] args)
     {
-        System.out.println("enter number");
-        int N =sc.nextInt();
-        int[] arr=getInteger(N);
-        int[] pa=printAarry(arr);
-
-        System.out.println("enter number of rotation");
-        int r=sc.nextInt();
-
-        int[]  rotatearray=rotation_array(arr,r);
+        int [] ar={1,2,3,4,5,6,7};
+        rotate(ar,2);
     }
-    public static int[] getInteger(int N)
+    public static void rotate(int[] nums, int k)
     {
-        int[] a=new int[N];
-        System.out.println("enter numbers");
-        for(int i=0;i<N;i++)
-            a[i]=sc.nextInt();
-
-        return a;
-    }
-    public static int[] printAarry(int[] a)
-    {
-        System.out.println("your arrray");
-        //System.out.println(a.length);
-        for(int i=0;i<a.length;i++)
-            System.out.print(a[i]+" ");
-        System.out.println("\n");
-        return a;
-    }
-    public static int[] rotation_array(int [] a,int ro)
-    {
-        int[] b=new int[a.length];
-        //System.out.printf(a.length+"");
-        int j=ro;
-        for(int i=0;i<a.length-ro;i++)
+        k%=nums.length;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
+        for(int i=0;i<nums.length;i++)
         {
-            b[i]=a[j];
-            j=j+1;
+             System.out.print(nums[i]+" ");
         }
-
-        int m=0;
-        for(int k=b.length-ro;k<b.length;k++)
-        {
-            b[k]=a[m];
-            m=m+1;
-        }
-
-        for(int i=0;i<b.length;i++)
-            System.out.print(b[i]+" ");
-
-        return b;
     }
+    public static void reverse(int[] nums, int start, int end)
+    {
+        while (start < end)
+        {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
+    }
+   
 }
